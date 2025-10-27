@@ -58,5 +58,19 @@ public class LibraryOperations {
 		System.out.println("Sorry no such book!!");
 		return null;
 	}
-	
+    public void issueBook(int bookId,int memberId) {
+		
+		for(Book book:books) {
+			if(book.getBookId()==bookId && book.isAvailableOrNot()==true) {
+				for (LibraryMember mem:members) {
+					if(mem.getMemberId()==memberId) {
+						mem.getNoOfBooksInHand().add(bookId);
+						book.setAvailableOrNot(false);
+						break;
+					}
+				}
+			}
+		}
+		
+	}
 }

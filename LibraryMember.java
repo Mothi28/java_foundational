@@ -1,12 +1,16 @@
 package com.library.management.system;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.Data;
 
 //@Data
 public class LibraryMember {
 	 private int memberId; 
 	 private String memberName;
-	 private int noOfBooksInHand;
+	 private List<Integer> noOfBooksInHand  = new ArrayList<Integer>();
+	 
 	public int getMemberId() {
 		return memberId;
 	}
@@ -19,10 +23,10 @@ public class LibraryMember {
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
-	public int getNoOfBooksInHand() {
+	public List<Integer> getNoOfBooksInHand() {
 		return noOfBooksInHand;
 	}
-	public void setNoOfBooksInHand(int noOfBooksInHand) {
+	public void setNoOfBooksInHand(List<Integer> noOfBooksInHand) {
 		this.noOfBooksInHand = noOfBooksInHand;
 	}
 	@Override
